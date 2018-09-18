@@ -45,28 +45,48 @@ def getFucked(message):
 @bot.message_handler(func=lambda message: True)
 def test(message):
     if message.reply_to_message.text == "Введите имя:" and message.text is not None:
-        markup = types.ForceReply(selective=False)
+        # markup = types.ForceReply(selective=False)
         a = random.randint(50, 200)
         result = None
         if a < 100:
             task = bot.reply_to(message,
                                 "Ну что же, " + message.chat.username + " под псевдонимом " + message.text + "\nВаш результат: " + str(
-                                    a) + "\nДобро пожаловать в /soc/!", reply_markup=markup)
+                                    a) + "\nДобро пожаловать в /soc/!")
+            markup = types.ReplyKeyboardMarkup(row_width=1)
+            itembtn1 = types.KeyboardButton("Начать тест")
+            itembtn2 = types.KeyboardButton("Не начинать тест")
+            markup.add(itembtn1, itembtn2)
+            task = bot.reply_to(message, "Еще разок?", reply_markup=markup)
             result = task.wait()
         elif a < 140:
             task = bot.reply_to(message,
                                 "Ну что же, " + message.chat.username + " под псевдонимом " + message.text + "\nВаш результат: " + str(
-                                    a) + "\nПоздравляем! Вы нормальный человек.", reply_markup=markup)
+                                    a) + "\nПоздравляем! Вы нормальный человек.")
+            markup = types.ReplyKeyboardMarkup(row_width=1)
+            itembtn1 = types.KeyboardButton("Начать тест")
+            itembtn2 = types.KeyboardButton("Не начинать тест")
+            markup.add(itembtn1, itembtn2)
+            task = bot.reply_to(message, "Еще разок?", reply_markup=markup)
             result = task.wait()
         elif a < 160:
             task = bot.reply_to(message,
                                 "Ну что же, " + message.chat.username + " под псевдонимом " + message.text + "\nВаш результат: " + str(
-                                    a) + "\nВам можно доверить админку в конфе 2chby.", reply_markup=markup)
+                                    a) + "\nВам можно доверить админку в конфе 2chby.")
+            markup = types.ReplyKeyboardMarkup(row_width=1)
+            itembtn1 = types.KeyboardButton("Начать тест")
+            itembtn2 = types.KeyboardButton("Не начинать тест")
+            markup.add(itembtn1, itembtn2)
+            task = bot.reply_to(message, "Еще разок?", reply_markup=markup)
             result = task.wait()
         else:
             task = bot.reply_to(message,
                                 "Ну что же, " + message.chat.username + " под псевдонимом " + message.text + "\nВаш результат: " + str(
-                                    a) + "\nВышмат одним этажом выше.", reply_markup=markup)
+                                    a) + "\nВышмат одним этажом выше.")
+            markup = types.ReplyKeyboardMarkup(row_width=1)
+            itembtn1 = types.KeyboardButton("Начать тест")
+            itembtn2 = types.KeyboardButton("Не начинать тест")
+            markup.add(itembtn1, itembtn2)
+            task = bot.reply_to(message, "Еще разок?", reply_markup=markup)
             result = task.wait()
 
 
