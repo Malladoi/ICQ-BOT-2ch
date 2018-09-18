@@ -52,5 +52,5 @@ setup(
     license='',
     author='thebluebox',
     author_email='',
-    description=''
+    description='', install_requires=['telebot']
 )

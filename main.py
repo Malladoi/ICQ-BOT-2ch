@@ -4,12 +4,12 @@ import os
 import logging
 from telebot import types
 
-# token = os.environ['TELEGRAM_TOKEN']
-# api_token = os.environ['SOME_API_TOKEN']
+token = os.environ['TELEGRAM_TOKEN']
+api_token = os.environ['SOME_API_TOKEN']
 logger = telebot.logger
 telebot.logger.setLevel(logging.CRITICAL)  # Outputs debug messages to console.
-# bot = telebot.AsyncTeleBot(token + ":" + api_token)
-bot = telebot.AsyncTeleBot("613024293:AAGl3k58Hht55RxKm8aBgZtkbGi5MfvScEo")
+bot = telebot.AsyncTeleBot(token + ":" + api_token)
+
 
 
 @bot.message_handler(commands=['start', 'help'])
