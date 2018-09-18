@@ -30,6 +30,7 @@ def getName(message):
     result = task.wait()
     print(result)
 
+
 @bot.message_handler(func=lambda message: message.text == "Не начинать тест")
 def getFucked(message):
     markup = types.ForceReply(selective=False)
@@ -41,6 +42,7 @@ def getFucked(message):
     task = bot.reply_to(message, "Че, зассцал?", reply_markup=markup)
     result = task.wait()
     print(result)
+
 
 @bot.message_handler(func=lambda message: True)
 def test(message):
@@ -56,7 +58,7 @@ def test(message):
             itembtn1 = types.KeyboardButton("Начать тест")
             itembtn2 = types.KeyboardButton("Не начинать тест")
             markup.add(itembtn1, itembtn2)
-            task = bot.reply_to(message, "Еще разок?", reply_markup=markup)
+            task = bot.send_message(message, "Еще разок?", reply_markup=markup)
             result = task.wait()
         elif a < 140:
             task = bot.reply_to(message,
@@ -66,7 +68,7 @@ def test(message):
             itembtn1 = types.KeyboardButton("Начать тест")
             itembtn2 = types.KeyboardButton("Не начинать тест")
             markup.add(itembtn1, itembtn2)
-            task = bot.reply_to(message, "Еще разок?", reply_markup=markup)
+            task = bot.send_message(message, "Еще разок?", reply_markup=markup)
             result = task.wait()
         elif a < 160:
             task = bot.reply_to(message,
@@ -76,7 +78,7 @@ def test(message):
             itembtn1 = types.KeyboardButton("Начать тест")
             itembtn2 = types.KeyboardButton("Не начинать тест")
             markup.add(itembtn1, itembtn2)
-            task = bot.reply_to(message, "Еще разок?", reply_markup=markup)
+            task = bot.send_message(message, "Еще разок?", reply_markup=markup)
             result = task.wait()
         else:
             task = bot.reply_to(message,
@@ -86,10 +88,8 @@ def test(message):
             itembtn1 = types.KeyboardButton("Начать тест")
             itembtn2 = types.KeyboardButton("Не начинать тест")
             markup.add(itembtn1, itembtn2)
-            task = bot.reply_to(message, "Еще разок?", reply_markup=markup)
+            task = bot.send_message(message, "Еще разок?", reply_markup=markup)
             result = task.wait()
-
-
     print(result)
 
 
